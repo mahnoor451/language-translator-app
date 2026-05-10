@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | My-Translator-App</title>
+    <style>
+        :root { --primary: #646cff; --text: #2c3e50; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
+        .wrapper { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        header { border-bottom: 2px solid #eee; margin-bottom: 30px; padding-bottom: 20px; text-align: center; }
+        h1 { margin: 0; color: var(--primary); font-size: 2.5rem; }
+        h2 { color: var(--primary); border-left: 4px solid var(--primary); padding-left: 15px; margin-top: 40px; }
+        code { background: #f0f0f0; padding: 3px 6px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 0.9em; }
+        pre { background: #282c34; color: #abb2bf; padding: 20px; border-radius: 8px; overflow-x: auto; line-height: 1.4; }
+        .tech-stack { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .tag { background: #e1e4e8; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .important { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <h1>My-Translator-App</h1>
+        <p>A professional, AI-powered language translation interface.</p>
+        <div class="tech-stack">
+            <span class="tag">Vite</span>
+            <span class="tag">Vanilla JS</span>
+            <span class="tag">Sass (BEM)</span>
+            <span class="tag">MyMemory API</span>
+        </div>
+    </header>
+
+    <h2>1. Introduction</h2>
+    <p>This project is a high-performance translation tool that utilizes the <strong>MyMemory API</strong>. It features a responsive UI built with a mobile-first approach, modern Sass architecture, and efficient event handling for real-time translations.</p>
+
+    <h2>2. Installation</h2>
+    <p>To set up the development environment, follow these steps:</p>
+    <pre>
+# Navigate to the source folder
+cd my-translator-app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev</pre>
+
+    <h2>3. How It Works (Logic)</h2>
+    <p>The core logic resides in <code>main.js</code>. The app listens for <code>input</code> events on the source textarea and triggers the <code>translateLanguage()</code> function.</p>
+    <ul>
+        <li><strong>Language Mapping:</strong> The <code>convertToLanguageCode()</code> function maps common language names (e.g., "Spanish", "Español") to ISO codes (<code>es</code>) required by the API.</li>
+        <li><strong>API Integration:</strong> Uses the <code>fetch</code> API to send encoded queries to MyMemory.</li>
+        <li><strong>Validation:</strong> The app checks if both language fields are filled before attempting a translation.</li>
+    </ul>
+
+    <div class="important">
+        <strong>Pro Tip:</strong> Users can also press <strong>Enter</strong> in the language input fields to manually trigger a translation.
+    </div>
+
+    <h2>4. Customization</h2>
+    <h3>Styling (Sass)</h3>
+    <p>The design is fully modular. To change the theme, edit <code>src/_variables.scss</code>:</p>
+    <pre>
+$primary-color: #646cff; 
+$background: #f8f9fa;
+$text-color: #2c3e50;</pre>
+    <p>The layout uses the <strong>BEM (Block Element Modifier)</strong> convention (e.g., <code>.container__field</code>), making it easy to style without affecting global scope.</p>
+
+    <h3>Adding Languages</h3>
+    <p>To support more dialects, simply extend the <code>languageMap</code> object in <code>main.js</code> with the new language name and its corresponding 2-letter ISO code.</p>
+
+    <h2>5. Deployment</h2>
+    <p>To generate a production-ready build:</p>
+    <pre>npm run build</pre>
+    <p>The output will be located in the <code>dist/</code> directory, ready to be deployed to <strong>Vercel</strong> or <strong>GitHub Pages</strong>.</p>
+
+    <footer style="margin-top: 50px; text-align: center; font-size: 0.9em; color: #888;">
+        &copy; 2026 Language Translator App. Built with Good Taste.
+    </footer>
+</div>
+
+</body>
+</html>

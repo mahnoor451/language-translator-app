@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-translator-app</title>
+  </head>
+  <body>
+     <h1 class="container__title">Language Translator</h1>
+    <div class="container">
+      <div class="container__section">
+        <input type="text" class="container__field" id="source-language" placeholder="e.g., English, Spanish, Urdu, German">
+        <textarea id="translation--input" class="container__textarea" rows="6" placeholder="Enter text to translate..."></textarea>
+      </div>
+      <div class="container__section">
+      <input type="text" class="container__field" id="target-language" placeholder="e.g., Arabic, Pashto, French">
+      <textarea id="translation--output" class="container__textarea" rows="6" placeholder="Translation will appear here..."></textarea>
+    </div>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

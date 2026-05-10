@@ -1,0 +1,73 @@
+@use "variables";
+
+body {
+  background: variables.$background;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.container__title {
+  text-align: center;
+  color: variables.$text-color;
+}
+
+.container {
+  border-radius: 20px;
+  margin: 0px auto;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+
+  &__section {
+    width: 80%;
+    margin: 0 auto;
+    transition: all 0.3s;
+    border: none;
+  }
+
+  &__section:hover {
+    transform: scale(1.1);
+  }
+
+  &__field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    border: none;
+  }
+
+  ::placeholder {
+    color: variables.$placeholder-color;
+    font-style: italic;
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #translation--input {
+    margin-bottom: 35px;
+  }
+
+  #translation--output {
+    background: variables.$secondary-color;
+    color: variables.$primary-color;
+  }
+
+  #translation--output::placeholder {
+    color: variables.$primary-color;
+  }
+}
