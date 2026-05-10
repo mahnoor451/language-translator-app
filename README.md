@@ -16,8 +16,6 @@ This project was developed as part of a professional portfolio to demonstrate cl
 * **Styling:** Sass (SCSS)
 * **Deployment:** Vercel (CI/CD Pipeline)
 
-# 🌍 AI Language Translator App
-
 **[🔗 Click Here for Live Demo](https://language-translator-app-pnht.vercel.app/)****
 
 ## 📦 Installation & Setup
