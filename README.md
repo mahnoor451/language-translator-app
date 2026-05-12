@@ -1,4 +1,4 @@
-# 🌍 AI Language Translator App
+# 🌍 Language Translator App
 
 A high-performance, responsive language translation tool built with **Vanilla JavaScript**, **Sass (BEM)**, and **Vite**. 
 
