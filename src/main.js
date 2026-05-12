@@ -1,3 +1,4 @@
+
 import "./style.scss";
 
 const sourceLanguageEl = document.getElementById("source-language");
@@ -23,7 +24,7 @@ function translateLanguage() {
 
   const langCode = convertToLanguageCode(fromLang);
   const targetCode = convertToLanguageCode(toLang);
-
+  const AUTHOR_EMAIL = "mahnoorishaq83@gmail.com";
   if (!langCode || !targetCode) {
     translationOutputEl.value =
       "Language not recognized. Try 'English' or 'Urdu'.";
@@ -33,7 +34,7 @@ function translateLanguage() {
   translationOutputEl.value = "Translating...";
 
   fetch(
-    `https://api.mymemory.translated.net/get?q=${encodeURIComponent(textToTranslate)}&langpair=${langCode}|${targetCode}`,
+    `https://api.mymemory.translated.net/get?q=${encodeURIComponent(textToTranslate)}&langpair=${langCode}|${targetCode}&de=${AUTHOR_EMAIL}`,
   )
     .then((res) => {
       if (!res.ok) throw new Error("Network response was not ok");
@@ -51,6 +52,19 @@ function translateLanguage() {
       translationOutputEl.value = "Error connecting to server.";
     });
 }
+
+let typingTimer;
+const doneTypingInterval = 1000; 
+
+translationInputEl.addEventListener('keyup', () => {
+    clearTimeout(typingTimer);
+    
+    if (translationInputEl.value.trim()) {
+        typingTimer = setTimeout(translateLanguage, doneTypingInterval);
+    } else {
+        translationOutputEl.value = "";
+    }
+});
 
 function convertToLanguageCode(languageName) {
   const languageMap = {
@@ -191,8 +205,6 @@ function convertToLanguageCode(languageName) {
 
   return languageMap[languageName.toLowerCase().trim()];
 }
-
-translationInputEl.addEventListener("input", translateLanguage);
 
 sourceLanguageEl.addEventListener("keypress", (e) => {
   if (e.key === "Enter") translateLanguage();
